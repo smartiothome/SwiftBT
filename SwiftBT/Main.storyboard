@@ -72,7 +72,7 @@
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="x8A-vY-Jwn">
-                                <rect key="frame" x="20" y="30" width="280" height="224"/>
+                                <rect key="frame" x="20" y="53" width="280" height="224"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="224" id="zNN-EJ-1yc"/>
@@ -86,7 +86,7 @@
                             <constraint firstAttribute="bottom" secondItem="kp1-Di-9hb" secondAttribute="bottom" constant="13" id="3wh-PN-ZjT"/>
                             <constraint firstAttribute="trailing" secondItem="x8A-vY-Jwn" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="EE0-A9-Pon"/>
                             <constraint firstItem="x8A-vY-Jwn" firstAttribute="leading" secondItem="Y9o-so-s2T" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="KsC-Pi-Vi7"/>
-                            <constraint firstItem="x8A-vY-Jwn" firstAttribute="top" secondItem="Y9o-so-s2T" secondAttribute="top" constant="30" id="akB-mK-E60"/>
+                            <constraint firstItem="x8A-vY-Jwn" firstAttribute="top" secondItem="Y9o-so-s2T" secondAttribute="top" constant="53" id="ayJ-jg-5bt"/>
                             <constraint firstItem="kp1-Di-9hb" firstAttribute="centerX" secondItem="x8A-vY-Jwn" secondAttribute="centerX" type="default" id="nTi-SP-LSk"/>
                         </constraints>
                     </view>
