@@ -16,6 +16,8 @@
 		C30DACAE19E995EC007E8C4A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C30DACAC19E995EC007E8C4A /* MainStoryboard_iPad.storyboard */; };
 		C30DACB519E99714007E8C4A /* BTLECentralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C30DACB119E99714007E8C4A /* BTLECentralViewController.m */; };
 		C30DACB619E99714007E8C4A /* BTLEPeripheralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C30DACB319E99714007E8C4A /* BTLEPeripheralViewController.m */; };
+		C30DACBA19E9DBA7007E8C4A /* Down_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = C30DACB819E9DBA7007E8C4A /* Down_arrow.png */; };
+		C30DACBB19E9DBA7007E8C4A /* Up_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = C30DACB919E9DBA7007E8C4A /* Up_arrow.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		C30DACB219E99714007E8C4A /* BTLEPeripheralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLEPeripheralViewController.h; sourceTree = "<group>"; };
 		C30DACB319E99714007E8C4A /* BTLEPeripheralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLEPeripheralViewController.m; sourceTree = "<group>"; };
 		C30DACB419E99714007E8C4A /* TransferService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferService.h; sourceTree = "<group>"; };
+		C30DACB819E9DBA7007E8C4A /* Down_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Down_arrow.png; sourceTree = "<group>"; };
+		C30DACB919E9DBA7007E8C4A /* Up_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Up_arrow.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 		C30DAC7D19E8F5BD007E8C4A = {
 			isa = PBXGroup;
 			children = (
+				C30DACB719E9DBA7007E8C4A /* Images */,
 				C30DAC8819E8F5BD007E8C4A /* SwiftBT */,
 				C30DAC9E19E8F5BD007E8C4A /* SwiftBTTests */,
 				C30DAC8719E8F5BD007E8C4A /* Products */,
@@ -127,6 +132,15 @@
 				C30DACA019E8F5BD007E8C4A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C30DACB719E9DBA7007E8C4A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C30DACB819E9DBA7007E8C4A /* Down_arrow.png */,
+				C30DACB919E9DBA7007E8C4A /* Up_arrow.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,8 +225,10 @@
 			files = (
 				C30DACAE19E995EC007E8C4A /* MainStoryboard_iPad.storyboard in Resources */,
 				C30DACAD19E995EC007E8C4A /* Main.storyboard in Resources */,
+				C30DACBB19E9DBA7007E8C4A /* Up_arrow.png in Resources */,
 				C30DAC9619E8F5BD007E8C4A /* LaunchScreen.xib in Resources */,
 				C30DAC9319E8F5BD007E8C4A /* Images.xcassets in Resources */,
+				C30DACBA19E9DBA7007E8C4A /* Down_arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

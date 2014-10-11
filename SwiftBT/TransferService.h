@@ -54,5 +54,10 @@
 #define LE_Transfer_TransferService_h
 
 #define MYGROUP_SERVICE_UUID           @"E20A39F4-73F5-4BC4-A12F-17D1AD07A321"
+#define ALPHA_LPF 0.97
+#define FILTER_LENGTH 250
+#define RSSI_RANGE 4
+#define MAX_RSSI -5
+#define MIN_RSSI -110
 
 #endif

@@ -92,6 +92,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Central" id="qzP-bt-9oF"/>
                     <connections>
+                        <outlet property="direction" destination="kp1-Di-9hb" id="y6P-BO-kig"/>
                         <outlet property="textview" destination="x8A-vY-Jwn" id="ag1-CZ-qwh"/>
                     </connections>
                 </viewController>
@@ -107,21 +108,10 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Here is a bunch of sample text.  Hold another device close to see the transfer happen." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ahP-qh-y5g">
-                                <rect key="frame" x="20" y="20" width="280" height="172"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Start Advertising" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GMc-4O-5iW">
+                                <rect key="frame" x="40" y="135" width="171" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="172" id="02z-hs-rh3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="CLX-Le-b13" id="7bO-X9-tKJ"/>
-                                </connections>
-                            </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Advertising" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GMc-4O-5iW">
-                                <rect key="frame" x="20" y="217" width="171" height="21"/>
-                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="57I-XX-Fqs"/>
                                     <constraint firstAttribute="width" constant="171" id="9AT-WB-28X"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -129,7 +119,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SHW-C2-RN9">
-                                <rect key="frame" x="223" y="214" width="79" height="27"/>
+                                <rect key="frame" x="211" y="132" width="79" height="27"/>
                                 <connections>
                                     <action selector="switchChanged:" destination="CLX-Le-b13" eventType="valueChanged" id="43o-NP-8Em"/>
                                 </connections>
@@ -137,19 +127,15 @@
                         </subviews>
                         <color key="backgroundColor" white="0.94615963855421703" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="SHW-C2-RN9" secondAttribute="bottom" constant="175" id="0ya-EM-KGl"/>
-                            <constraint firstItem="SHW-C2-RN9" firstAttribute="centerY" secondItem="GMc-4O-5iW" secondAttribute="centerY" type="default" id="7Os-TG-TWq"/>
-                            <constraint firstItem="ahP-qh-y5g" firstAttribute="top" secondItem="HqI-5G-qR2" secondAttribute="top" constant="20" symbolic="YES" type="default" id="AZM-uY-Bxv"/>
-                            <constraint firstItem="ahP-qh-y5g" firstAttribute="leading" secondItem="HqI-5G-qR2" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Fey-fw-wI4"/>
-                            <constraint firstAttribute="trailing" secondItem="SHW-C2-RN9" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Hfb-04-R3K"/>
-                            <constraint firstItem="GMc-4O-5iW" firstAttribute="leading" secondItem="HqI-5G-qR2" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="NUi-cv-vvL"/>
-                            <constraint firstAttribute="trailing" secondItem="ahP-qh-y5g" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Vx9-DT-Knc"/>
+                            <constraint firstAttribute="trailing" secondItem="SHW-C2-RN9" secondAttribute="trailing" constant="32" id="XtC-4F-xLJ"/>
+                            <constraint firstItem="SHW-C2-RN9" firstAttribute="top" secondItem="HqI-5G-qR2" secondAttribute="top" constant="132" id="Y2X-2c-fdn"/>
+                            <constraint firstItem="SHW-C2-RN9" firstAttribute="centerY" secondItem="GMc-4O-5iW" secondAttribute="centerY" type="default" id="fyW-Aq-bzi"/>
+                            <constraint firstItem="GMc-4O-5iW" firstAttribute="leading" secondItem="HqI-5G-qR2" secondAttribute="leading" constant="40" id="sZe-C4-LGq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Peripheral" id="krm-GA-4hL"/>
                     <connections>
                         <outlet property="advertisingSwitch" destination="SHW-C2-RN9" id="2XB-4o-9uq"/>
-                        <outlet property="textView" destination="ahP-qh-y5g" id="cBh-o6-3c7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Naf-L5-Kmt" userLabel="First Responder" sceneMemberID="firstResponder"/>

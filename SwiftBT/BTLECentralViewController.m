@@ -20,7 +20,11 @@
 @property (strong, nonatomic) CBCentralManager      *centralManager;
 @property (strong, nonatomic) CBPeripheral          *discoveredPeripheral;
 @property (strong, nonatomic) NSMutableData         *data;
+@property (weak, nonatomic) IBOutlet UIImageView *direction;
 
+@property () double filteredRSSI ;
+@property () int numSamples ;
+@property ()    double lastRSSI ;
 @end
 
 
@@ -100,27 +104,41 @@
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
 {
     // Reject any where the value is above reasonable range
-    if (RSSI.integerValue > -15) {
+    if (RSSI.integerValue > MAX_RSSI) {
         return;
     }
         
     // Reject if the signal strength is too low to be close enough (Close is around -22dB)
-    if (RSSI.integerValue < -35) {
+    if (RSSI.integerValue < MIN_RSSI) {
         return;
     }
     
     NSLog(@"Discovered %@ at %@", peripheral.name, RSSI);
     
-    // Ok, it's in range - have we already seen it?
-    if (self.discoveredPeripheral != peripheral) {
-        
-        // Save a local copy of the peripheral, so CoreBluetooth doesn't get rid of it
-        self.discoveredPeripheral = peripheral;
-        
-        // And connect
-        NSLog(@"Connecting to peripheral %@", peripheral);
-        [self.centralManager connectPeripheral:peripheral options:nil];
+    self.numSamples++ ;
+    self.filteredRSSI = (ALPHA_LPF*self.filteredRSSI)+((1-ALPHA_LPF)*RSSI.integerValue) ;
+    
+    if(self.numSamples > FILTER_LENGTH)
+    {
+        if(fabs(self.filteredRSSI-self.lastRSSI) > RSSI_RANGE)
+        {
+            if(self.lastRSSI > self.filteredRSSI)
+            {
+             UIImage *image = [UIImage imageNamed:@"Down_arrow.png"] ;
+             [self.direction setImage:image] ;
+             NSLog(@"Moving away from Target");
+                self.textview.text=[NSString stringWithFormat:@"Discovered %@ at RSSI of %.1f. Moving away from target since RSSI went down. So walk backwards in direction of arrow", peripheral.name, self.filteredRSSI] ;
+            }
+            else
+            {
+                UIImage *image = [UIImage imageNamed:@"Up_arrow.png"] ;
+                [self.direction setImage:image] ;
+                NSLog(@"Moving towards Target");
+                self.textview.text=[NSString stringWithFormat:@"Discovered %@ at RSSI of %.1f. Moving towards target since RSSI went up. So walk same direction of arrow", peripheral.name, self.filteredRSSI] ;
+            }
+        }
     }
+    
 }
 
 
@@ -201,7 +219,6 @@
 
 
 /** This callback lets us know more data has arrived via notification on the characteristic
- */
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
     if (error) {
@@ -230,7 +247,7 @@
     // Log it
     NSLog(@"Received: %@", stringFromData);
 }
-
+*/
 
 /** The peripheral letting us know whether our subscribe/unsubscribe happened or not
  */
