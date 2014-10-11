@@ -13,24 +13,10 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRh-zO-6n2">
-                                <rect key="frame" x="105" y="112" width="126" height="44"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Other Member">
-                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="oJR-Eu-GFX" kind="push" id="FfV-FB-Sw2"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgw-nN-SFc">
-                                <rect key="frame" x="123" y="239" width="73" height="44"/>
+                                <rect key="frame" x="99" y="239" width="120" height="44"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Leader">
+                                <state key="normal" title="Target Device">
                                     <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -41,13 +27,27 @@
                                     <segue destination="CLX-Le-b13" kind="push" id="cmF-iY-ZXu"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRh-zO-6n2">
+                                <rect key="frame" x="61" y="112" width="196" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Device walking to Target">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="oJR-Eu-GFX" kind="push" id="FfV-FB-Sw2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="qgw-nN-SFc" secondAttribute="bottom" constant="134" id="6q7-Tu-sHi"/>
-                            <constraint firstItem="qgw-nN-SFc" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="IyX-1a-F6W"/>
-                            <constraint firstItem="yRh-zO-6n2" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="105" id="MIP-Rp-4mC"/>
+                            <constraint firstItem="yRh-zO-6n2" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="61" id="AEa-cJ-7NM"/>
                             <constraint firstItem="yRh-zO-6n2" firstAttribute="top" secondItem="3" secondAttribute="top" constant="112" id="V7m-4d-0hw"/>
+                            <constraint firstItem="yRh-zO-6n2" firstAttribute="centerX" secondItem="qgw-nN-SFc" secondAttribute="centerX" type="default" id="chh-kY-HLX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select Mode" id="go5-FE-P7r"/>
