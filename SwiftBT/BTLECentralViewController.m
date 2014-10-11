@@ -127,15 +127,16 @@
              UIImage *image = [UIImage imageNamed:@"Down_arrow.png"] ;
              [self.direction setImage:image] ;
              NSLog(@"Moving away from Target");
-                self.textview.text=[NSString stringWithFormat:@"Discovered %@ at RSSI of %.1f. Moving away from target since RSSI went down. So walk backwards in direction of arrow", peripheral.name, self.filteredRSSI] ;
+                self.textview.text=[NSString stringWithFormat:@"Discovered Target at RSSI of %.1f. Moving away from target since RSSI went down. Walk in the direction of the arrow (backwards)", self.filteredRSSI] ;
             }
             else
             {
                 UIImage *image = [UIImage imageNamed:@"Up_arrow.png"] ;
                 [self.direction setImage:image] ;
                 NSLog(@"Moving towards Target");
-                self.textview.text=[NSString stringWithFormat:@"Discovered %@ at RSSI of %.1f. Moving towards target since RSSI went up. So walk same direction of arrow", peripheral.name, self.filteredRSSI] ;
+                self.textview.text=[NSString stringWithFormat:@"Discovered Target at RSSI of %.1f. Moving towards target since RSSI went up. Walk in the direction of the arrow (forwards)", self.filteredRSSI] ;
             }
+            self.lastRSSI=self.filteredRSSI ;
         }
     }
     
